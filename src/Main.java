@@ -1,15 +1,57 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Notebook notebook1 = new Notebook(1,
+                "HP 2000",
+                "Intel 100",
+                1024,
+                100,
+                "Nvidia XT",
+                "Windows 7",
+                10_000);
+        Notebook notebook2 = new Notebook(2,
+                "Asus ROG",
+                "Intel 500",
+                2048,
+                1000,
+                "Nvidia RTX",
+                "Windows 10",
+                50_000);
+        Notebook notebook3 = new Notebook(3,
+                "Dexp",
+                "AMD 6",
+                4096,
+                500,
+                "Radeon 6000",
+                "Linux",
+                30_000);
+        Notebook notebook4 = new Notebook(4,
+                "No name",
+                "Байкал",
+                1024,
+                100,
+                "Integrated",
+                "No",
+                100_000);
+        Notebook notebook5 = new Notebook(1,
+                "HP 2000",
+                "Intel 100",
+                1024,
+                100,
+                "Nvidia XT",
+                "Windows 7",
+                10_000);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        Set<Notebook> notebooks = new HashSet<>(Arrays.asList(notebook1,
+                notebook2,
+                notebook3,
+                notebook4,
+                notebook5));
+        for (Notebook notebook : notebooks) {
+            System.out.println(notebook);
         }
     }
 }
