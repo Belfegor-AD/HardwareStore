@@ -1,6 +1,4 @@
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -52,6 +50,41 @@ public class Main {
                 notebook5));
         for (Notebook notebook : notebooks) {
             System.out.println(notebook);
+        }
+        filterNotebooks(notebooks);
+    }
+
+    public static void filterNotebooks(Set<Notebook> notebooks) {
+//        Map<Integer,Integer> filters = new HashMap<>();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print(
+                "1 - ОЗУ\n" +
+                "2 - Объем ЖД\n" +
+                "3 - Цена\n" +
+                "Введите цифру, соответствующую необходимому критерию: ");
+        int criteria = scanner.nextInt();
+        System.out.print("Введите минимальное значение: ");
+        int minSize = scanner.nextInt();
+//        filters.put(criteria, minSize);
+
+        for (Notebook notebook : notebooks) {
+            switch (criteria){
+                case 1:
+                    if (notebook.getRam() >= minSize) {
+                        System.out.println(notebook);
+                    }
+                    break;
+                case 2:
+                    if (notebook.getHdd() >= minSize) {
+                        System.out.println(notebook);
+                    }
+                    break;
+                case 3:
+                    if (notebook.getPrice() >= minSize) {
+                        System.out.println(notebook);
+                    }
+                    break;
+            }
         }
     }
 }
