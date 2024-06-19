@@ -55,7 +55,6 @@ public class Main {
     }
 
     public static void filterNotebooks(Set<Notebook> notebooks) {
-//        Map<Integer,Integer> filters = new HashMap<>();
         Scanner scanner = new Scanner(System.in);
         System.out.print(
                 "1 - ОЗУ\n" +
@@ -65,7 +64,6 @@ public class Main {
         int criteria = scanner.nextInt();
         System.out.print("Введите минимальное значение: ");
         int minSize = scanner.nextInt();
-//        filters.put(criteria, minSize);
 
         for (Notebook notebook : notebooks) {
             switch (criteria){
